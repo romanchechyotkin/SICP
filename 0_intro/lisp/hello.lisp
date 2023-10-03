@@ -8,7 +8,7 @@
     ))
 
 (defun hello ()
-    (format t "Hello World~%")
+    (format t "Hello world~%")
 )
 
 (defun many (n) 
@@ -18,3 +18,22 @@
 (defun get-idx (n list)
     (nth n list)
 )
+
+(defun five-plus-six () 
+    (let* ((a 5)
+          (b (+ a 1)))
+     (+ a b)      
+    )
+)
+
+(defparameter *string* "Hello World")
+(defun print-global () 
+    (print *string*)
+)
+
+(defun print-change () 
+    (let ((*string* "init-form-1"))
+        (print-global))
+)
+
+(defparameter my-list (list 1 2 3 4 5))
